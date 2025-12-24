@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* DESIGN TOKENS (CSS VARIABLES) */
+
+@layer base {
+  :root {
+    /* Colors */
+    --background: 225 30% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 225 30% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 225 30% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 95% 50%;
+    --primary-foreground: 225 30% 3%;
+
+    --secondary: 225 30% 10%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 225 30% 14%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 270 80% 65%;
+    --accent-foreground: 210 40% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 30% 12%;
+    --input: 225 30% 12%;
+    --ring: 190 95% 50%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Fonts */
+    --font-display: "Sora", system-ui, sans-serif;
+    --font-body: "Sora", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(190 95% 50%) 0%,
+      hsl(270 80% 65%) 100%
+    );
+
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(270 80% 65%) 0%,
+      hsl(330 80% 60%) 100%
+    );
+  }
+
+  .dark {
+    --background: 225 30% 3%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+
+  /* BASE STYLES */
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+
+  /* UTILITIES */
+
+@layer utilities {
+  .text-gradient {
+    background-image: var(--gradient-primary);
+    @apply bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    background-image: var(--gradient-secondary);
+    @apply bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background-image: var(--gradient-secondary);
+  }
+
+  .glow-primary {
+    box-shadow:
+      0 0 60px hsl(190 95% 50% / 0.25),
+      0 0 100px hsl(190 95% 50% / 0.1);
+  }
+
+  .glow-accent {
+    box-shadow:
+      0 0 60px hsl(270 80% 65% / 0.2),
+      0 0 100px hsl(270 80% 65% / 0.1);
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
+      var(--gradient-primary) border-box;
+  }
+
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+
+  /* COMPONENT HELPERS */
+
+@layer components {
+  .nav-link {
+    color: hsl(var(--muted-foreground));
+    @apply text-sm font-medium relative transition-all duration-300;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--foreground));
+  }
+
+  .nav-link::after {
+    content: "";
+    background-image: var(--gradient-primary);
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+
+  .section-subheading {
+    color: hsl(var(--muted-foreground));
+    @apply text-lg md:text-xl max-w-2xl leading-relaxed;
+  }
+
+  .card-glass {
+    background-color: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border) / 0.5);
+    @apply backdrop-blur-xl rounded-2xl;
+  }
+
+  .btn-primary {
+    background-image: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           font-medium transition-all duration-300
+           hover:scale-105 active:scale-95
+           hover:shadow-[0_0_30px_hsl(190_95%_50%/0.4)];
+  }
+
+  .btn-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border));
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.8);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(225 30% 6%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(225 30% 20%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(190 95% 50% / 0.5);
+}
