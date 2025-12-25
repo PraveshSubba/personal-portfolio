@@ -1,16 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:alex.chen@stanford.edu", label: "Email" },
+     { icon: FiGithub, href: "https://github.com/PraveshSubba", label: "GitHub" },
+      { icon: FiLinkedin, href: "www.linkedin.com/in/praveshsubba", label: "LinkedIn" },
+      { icon: FiMail, href: "mailto:praveshsubba81@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -23,7 +22,7 @@ const Footer = () => {
   return (
     <footer className="relative pt-20 pb-8 px-6 border-t border-border/50">
       {/* Gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent" />
 
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
@@ -31,11 +30,11 @@ const Footer = () => {
           <div>
             <div className="font-display text-2xl font-bold mb-4">
               <span className="text-gradient">&lt;</span>
-              Alex Chen
+              Pravesh Subba
               <span className="text-gradient">/&gt;</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Data Scientist & ML Engineer passionate about transforming data 
+              C S Graduate & AI ML passionate about transforming data 
               into impactful solutions.
             </p>
             <div className="flex items-center gap-3">
@@ -100,11 +99,9 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Alex Chen. All rights reserved.
+            © {currentYear} Pravesh Subba. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and lots of coffee
-          </p>
+        
         </div>
       </div>
     </footer>

@@ -42,7 +42,7 @@ const ProjectCard = ({
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className="object-fill"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />

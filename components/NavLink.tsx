@@ -7,7 +7,7 @@ import { forwardRef } from "react";
 
 interface NavLinkProps extends React.ComponentPropsWithoutRef<typeof Link> {
   activeClassName?: string;
-  pendingClassName?: string; // Next.js doesn't have a "pending" state for links, but we keep the prop to match your interface
+  pendingClassName?: string; 
 }
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(

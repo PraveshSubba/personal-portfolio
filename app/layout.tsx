@@ -3,10 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
-  title: "Your Portfolio",
-  description: "Personal portfolio built with Next.js",
+  title: "Pravesh Subba — Portfolio",
+  description:
+    "Personal portfolio of Pravesh Subba, a Web Developer and Computer Science student specializing in Data Science, showcasing projects built with Next.js, React, and Tailwind CSS.",
 };
 
 /* Body font */
@@ -42,7 +44,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background overflow-x-hidden font-body antialiased">
         <Navigation />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

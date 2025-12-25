@@ -6,43 +6,42 @@ import AnimatedSection from "./AnimatedSection";
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Languages & Core",
+      title: "Data Science & ML",
       color: "primary",
-      skills: ["Python", "R", "SQL", "JavaScript", "Julia", "Scala"],
+      skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "SQL"],
     },
     {
-      title: "Machine Learning",
+      title: "Web Development",
       color: "accent",
-      skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "XGBoost", "LightGBM"],
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"],
     },
     {
-      title: "Data Engineering",
+      title: "No-Code & Backend",
       color: "primary",
-      skills: ["Apache Spark", "Hadoop", "Airflow", "Kafka", "dbt", "Prefect"],
+      skills: ["Lovable", "Node.js", "REST APIs","Spring Boot","FastAPI" ],
     },
     {
       title: "Visualization",
       color: "accent",
-      skills: ["Matplotlib", "Seaborn", "Plotly", "Tableau", "D3.js", "Streamlit"],
+      skills: ["Matplotlib", "Seaborn", "Tableau"],
     },
     {
-      title: "Cloud & MLOps",
+      title: "Cloud & Deployment", 
       color: "primary",
-      skills: ["AWS", "GCP", "Azure ML", "Docker", "Kubernetes", "MLflow"],
+      skills: ["Vercel", "Docker", "IBM Cloud"], 
     },
     {
-      title: "Databases",
+      title: "Math & Fundamentals",
       color: "accent",
-      skills: ["PostgreSQL", "MongoDB", "Redis", "Snowflake", "BigQuery", "Pinecone"],
+      skills: ["Statistics", "Linear Algebra", "Calculus", "Computer Networks"],
     },
   ];
-
   return (
     <section id="skills" className="py-32 px-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/5 rounded-full blur-[150px]"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 10, repeat: Infinity }}
       />

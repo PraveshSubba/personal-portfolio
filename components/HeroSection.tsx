@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, FileText, Sparkles } from "lucide-react";
+import { ArrowDown, FileText, Sparkles } from "lucide-react";
+import { FiGithub, FiLinkedin,FiMail } from "react-icons/fi";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -33,12 +34,12 @@ const HeroSection = () => {
       
       {/* Gradient Orbs */}
       <motion.div
-        className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"
+        className="absolute top-1/4 -left-64 w-125 h-125 bg-primary/20 rounded-full blur-[120px]"
         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px]"
+        className="absolute bottom-1/4 -right-64 w-125 h-125 bg-accent/20 rounded-full blur-[120px]"
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.3, 0.2] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
@@ -69,7 +70,7 @@ const HeroSection = () => {
         >
           Hi, I'm{" "}
           <span className="text-gradient relative">
-            Alex Chen
+            Pravesh
             <motion.span
               className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-primary rounded-full"
               initial={{ scaleX: 0 }}
@@ -82,7 +83,7 @@ const HeroSection = () => {
         {/* Subtitle with typing effect style */}
         <motion.div variants={itemVariants} className="mb-8">
           <span className="text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground">
-            Data Scientist & ML Engineer
+            C S Graduate | ML & AI Enthusiast
           </span>
         </motion.div>
 
@@ -121,8 +122,16 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FileText className="w-4 h-4" />
-            Download CV
+            <a 
+              href="/resume.pdf" 
+              download="Pravesh_Subba_CV.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              <span>Download CV</span>
+            </a>
           </motion.a>
         </motion.div>
 
@@ -132,9 +141,9 @@ const HeroSection = () => {
           className="flex items-center justify-center gap-3"
         >
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:alex@example.com", label: "Email" },
+            { icon: FiGithub, href: "https://github.com/PraveshSubba", label: "GitHub" },
+            { icon: FiLinkedin, href: "www.linkedin.com/in/praveshsubba", label: "LinkedIn" },
+            { icon: FiMail, href: "mailto:praveshsubba81@gmail.com", label: "Email" },
           ].map((social) => (
             <motion.a
               key={social.label}
@@ -175,7 +184,7 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <motion.button
         onClick={scrollToAbout}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

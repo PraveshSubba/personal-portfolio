@@ -5,54 +5,80 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Customer Churn Prediction Engine",
-    category: "Machine Learning",
+    title: "Interactive 3D Web Experience",
+    category: "Web Development",
     description:
-      "Built an ensemble model combining XGBoost, Random Forest, and Neural Networks to predict customer churn with 94% accuracy. Implemented SHAP for model interpretability.",
-    technologies: ["Python", "XGBoost", "TensorFlow", "SHAP", "FastAPI", "Docker"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    metrics: "94% Accuracy",
+      "A 3D web application built with Three.js and React, featuring real-time rendering, interactive camera controls, and optimized WebGL performance for immersive browser-based experiences.",
+
+    technologies: ["JavaScript", "React", "Three.js", "Tailwind CSS", "Vite"],
+
+    image: "/images/project1.webp",
+
+    githubLink: "https://github.com/PraveshSubba/threejs-showcase.git",
+    liveLink: "https://portfolio-one-fawn-77.vercel.app/",
+    metrics: "60 FPS Animations",  
   },
+
+ {
+    title: "Unified College Management System",
+    category: "Full Stack Development",
+    description:
+      "Architected a comprehensive institutional platform integrating a high-performance Spring Boot backend with a responsive React.js frontend. Features secure Role-Based Access Control (RBAC) for Admins, Teachers, and Students, utilizing WebSockets for real-time updates and interactive dashboards for academic management.",
+    technologies: [
+      "Java Spring Boot",
+      "React.js",
+      "REST APIs",
+      "WebSockets",
+      "Maven",
+      "Chart.js" 
+    ],
+    image: "/images/project2.webp",
+    githubLink: "https://github.com/sairaj2059/College-Management-System.git",
+    metrics: "Secure RBAC Architecture",
+  },
+
   {
-    title: "Real-time Sentiment Analyzer",
-    category: "Natural Language Processing",
+    title: "OnDemandDoc: Appointment System",
+    category: "Full Stack & HealthTech",
     description:
-      "Developed a BERT-based sentiment analysis system processing 10K+ tweets/minute with real-time dashboard visualization and automated alerts.",
-    technologies: ["PyTorch", "Transformers", "Apache Kafka", "Redis", "Streamlit"],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop",
-    githubLink: "https://github.com",
-    metrics: "10K/min throughput",
+      "Developed a robust medical scheduling engine enabling seamless doctor-patient connections. Features a triple-interface architecture (Patient, Doctor, Admin) to handle complex booking logic, real-time availability slot management, and secure payment processing to reduce appointment no-shows.",
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Redux Toolkit",
+      "Cloudinary"
+    ],
+    image: "/images/project4.webp", 
+    githubLink: "https://github.com/PraveshSubba/onDemandDoc.git", 
+    metrics: "3-Portal Architecture", 
   },
+
   {
-    title: "COVID-19 Forecasting Dashboard",
-    category: "Time Series & Visualization",
+    title: "My Vault: Secure Password Manager",
+    category: "Cybersecurity & Desktop App",
     description:
-      "Interactive dashboard with LSTM-based forecasting, geospatial analysis, and anomaly detection. Featured by Stanford Health Innovation Lab.",
-    technologies: ["Python", "Plotly", "Dash", "LSTM", "Prophet", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=500&fit=crop",
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    metrics: "Featured Project",
-  },
-  {
-    title: "Medical Image Classifier",
-    category: "Computer Vision",
-    description:
-      "CNN-based diagnostic tool for X-ray classification achieving radiologist-level performance. Deployed on AWS with automated retraining pipeline.",
-    technologies: ["TensorFlow", "AWS SageMaker", "MLflow", "Kubernetes", "React"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
-    githubLink: "https://github.com",
-    metrics: "97.2% F1 Score",
-  },
+      "Developed a privacy-first password management solution featuring a 'Zero-Knowledge' local architecture. The application offers dual interfaces (CLI & GUI) and utilizes strong encryption to secure credentials locally, ensuring complete data sovereignty without external cloud dependencies. Packaged as standalone executables for seamless Windows deployment.",
+    technologies: [
+      "Python 3.10",
+      "Cryptography (AES)",
+      "Tkinter", 
+      "JSON",
+      "PyInstaller", 
+    ],
+    image: "/images/project4.webp",
+    githubLink: "https://github.com/PraveshSubba/password-manager.git",
+    metrics: "Zero-Knowledge Architecture",
+  }
+
 ];
 
 const ProjectsSection = () => {
   return (
     <section id="projects" className="py-32 px-6 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       <div className="absolute inset-0 dot-pattern opacity-20" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -62,7 +88,7 @@ const ProjectsSection = () => {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="section-subheading mx-auto">
-            Real-world data science projects showcasing end-to-end ML pipelines, 
+            Real-world data science projects showcasing end-to-end ML pipelines,
             from data exploration to production deployment
           </p>
         </AnimatedSection>
@@ -76,7 +102,7 @@ const ProjectsSection = () => {
         {/* View More */}
         <AnimatedSection className="text-center mt-12">
           <a
-            href="https://github.com"
+            href="https://github.com/PraveshSubba"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

@@ -2,42 +2,37 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import { GraduationCap, Target, Award, BookOpen } from "lucide-react";
+import { GraduationCap, Code2, BrainCircuit } from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { value: "3+", label: "Years Experience" },
-    { value: "15+", label: "Projects Completed" },
-    { value: "5", label: "Publications" },
-    { value: "98%", label: "Model Accuracy" },
+    { value: "M.Sc.", label: "Data Science" },
+    { value: "4+", label: "Full Stack Projects" },
+    { value: "5+", label: "Tech Stack Tools" },
+    { value: "24/7", label: "Learning Mindset" },
   ];
 
   const highlights = [
     {
       icon: GraduationCap,
-      title: "Education",
-      description: "M.S. in Data Science at Stanford University, Class of 2025",
+      title: "Academic Foundation",
+      description: "M.Sc. in Data Science, Sri Sathya Sai Institute Of Higher Learning (2025)",
     },
     {
-      icon: Target,
-      title: "Specialization",
-      description: "Machine Learning, NLP, Computer Vision, and Deep Learning",
+      icon: BrainCircuit,
+      title: "Analytical Expertise",
+      description: "Advanced Statistical Methods, Predictive Modeling, and Deep Learning Architectures",
     },
     {
-      icon: Award,
-      title: "Achievements",
-      description: "Dean's List, Google AI Research Grant, Kaggle Expert",
-    },
-    {
-      icon: BookOpen,
-      title: "Research",
-      description: "Published work on transformer architectures in healthcare AI",
+      icon: Code2,
+      title: "Technical Engineering",
+      description: "Full-Stack Development with Next.js, API Design (FastAPI), and Cloud Infrastructure",
     },
   ];
 
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden">
-      {/* Background */}
+      {/* Background Elements */}
       <div className="absolute inset-0 dot-pattern opacity-30" />
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
@@ -58,7 +53,9 @@ const AboutSection = () => {
                   <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -66,36 +63,40 @@ const AboutSection = () => {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column */}
+          {/* Left Column - Narrative */}
           <AnimatedSection>
-            <div className="section-label">About Me</div>
+            <div className="section-label">Professional Profile</div>
+            
             <h2 className="section-heading mb-8">
-              Turning Data Into
+              Architecting
               <br />
-              <span className="text-gradient">Powerful Insights</span>
+              <span className="text-gradient">Intelligent Systems</span>
             </h2>
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+
+            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed text-justify">
               <p>
-                I'm a passionate data scientist with a deep fascination for 
-                uncovering hidden patterns in complex datasets. My journey began 
-                with a simple question: <span className="text-foreground italic">"How can data 
-                transform the way we make decisions?"</span>
+                My professional focus lies at the convergence of advanced data analytics 
+                and modern software engineering. Leveraging a rigorous academic foundation 
+                in <span className="text-foreground font-medium">Machine Learning</span>, 
+                I specialize in transitioning theoretical models into robust, scalable production environments.
               </p>
               <p>
-                With expertise spanning from classical statistical methods to 
-                cutting-edge deep learning architectures, I build end-to-end ML 
-                pipelines that drive real business impact. I believe in making 
-                AI accessible, interpretable, and ethical.
+                Transcending traditional analysis, I orchestrate the full lifecycle of 
+                data products. This involves engineering high-performance interfaces with 
+                <span className="text-foreground font-medium"> Next.js</span>, 
+                developing efficient microservices via 
+                <span className="text-foreground font-medium"> FastAPI</span>, 
+                and ensuring seamless cloud deployment.
               </p>
               <p>
-                When I'm not training models, you'll find me contributing to 
-                open-source projects, writing technical blogs, or exploring the 
-                latest research papers.
+                My objective is to bridge the gap between complex algorithmic research 
+                and tangible business utility, delivering solutions that are statistically 
+                sound and technically superior.
               </p>
             </div>
           </AnimatedSection>
 
-          {/* Right Column - Highlights */}
+          {/* Right Column - Strategic Highlights */}
           <div className="space-y-5">
             {highlights.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>

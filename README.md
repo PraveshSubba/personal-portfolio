@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Personal Portfolio — Next.js + TypeScript
 
-## Getting Started
+Professional, accessible, and responsive personal portfolio built with Next.js (App Router), TypeScript and Tailwind CSS. This repository contains a modular component library and page sections that make it simple to personalize content, showcase projects, and deploy to any Next.js-compatible hosting platform.
 
-First, run the development server:
+## Highlights
+
+- Clean, responsive design with sections for Hero, About, Projects, Skills and Contact.
+- Reusable UI primitives in `components/ui/` and higher-level page sections in `components/`.
+- Theme toggle (light / dark) and accessible interaction patterns.
+- Built with modern Next.js conventions (App Router) and TypeScript.
+
+## Live Demo
+
+Add your deployment URL here when available (e.g., Vercel):
+
+> https://your-portfolio-url.example
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 16+ (LTS recommended)
+- npm, pnpm or yarn
+
+### Install dependencies
+
+```bash
+npm install
+# or
+pnpm install
+# or
+yarn install
+```
+
+### Run (development)
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
 # or
-bun dev
+yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build (production)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure (overview)
 
-## Learn More
+- `app/` — Next.js App Router entry, global layout and pages
+- `components/` — Page sections (`HeroSection`, `ProjectsSection`, etc.)
+- `components/ui/` — Design system primitives and shared UI components
+- `hooks/` — Custom React hooks (e.g., `use-mobile`, `use-toast`)
+- `lib/` — Utility helpers and small shared utilities
+- `public/` — Static assets (images, fonts)
 
-To learn more about Next.js, take a look at the following resources:
+## Key files
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.tsx` — Home page composition
+- `app/layout.tsx` — Global layout and metadata
+- `components/ProjectsSection.tsx` — Projects listing and cards
+- `components/HeroSection.tsx` — Landing hero section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development Notes
 
-## Deploy on Vercel
+- Replace placeholder content in `app/page.tsx` and components to personalize copy and projects.
+- Add project images to `public/images/` and reference them from `components/ProjectsSection.tsx`.
+- This project uses Tailwind CSS. Adjust theme tokens in `tailwind.config.ts` as needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Recommended: Vercel (native Next.js support). Steps:
+
+1. Push your repository to GitHub/GitLab/Bitbucket.
+2. Create a new project in Vercel and link the repository.
+3. Use the default build command `npm run build` and output directory.
+
+Other hosts that support Next.js are also compatible (Netlify, Render, etc.).
+
+## Contributing
+
+Contributions are welcome — open an issue or submit a pull request with improvements. If you submit changes, please:
+
+- Keep changes focused and document any new configuration.
+- Run formatting (Prettier) and type checks before opening a PR.
+
+## Suggested scripts (package.json)
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  }
+}
+```
+
+## Accessibility & Performance
+
+- Aim to keep semantic HTML, keyboard navigation and ARIA where appropriate.
+- Use Next.js built-in image optimization for performance (`next/image`).
+
+## License
+
+This repository is provided under the MIT License. Replace or update the license to reflect your preferences.
+
+## Contact
+
+Include your preferred contact method or social links here (email, LinkedIn, GitHub).
+
+## Acknowledgements
+
+- Built with Next.js, Tailwind CSS and small open-source UI primitives.
+
+## Next steps I can take for you
+
+- Add CI/CD and badge placeholders (build, license, code coverage)
+- Populate `components/ProjectsSection.tsx` with example project entries
+- Add a short deployment guide for Vercel with environment variable notes
+
+If you'd like any of the above, tell me which one to do next and I will proceed.
