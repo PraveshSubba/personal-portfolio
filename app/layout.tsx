@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Pravesh Subba — Portfolio",
@@ -44,7 +43,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background overflow-x-hidden font-body antialiased">
         <Navigation />
-        <Providers>{children}</Providers>
+        {children}
         <Footer />
       </body>
     </html>

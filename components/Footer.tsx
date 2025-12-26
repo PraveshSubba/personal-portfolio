@@ -7,9 +7,17 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-     { icon: FiGithub, href: "https://github.com/PraveshSubba", label: "GitHub" },
-      { icon: FiLinkedin, href: "www.linkedin.com/in/praveshsubba", label: "LinkedIn" },
-      { icon: FiMail, href: "mailto:praveshsubba81@gmail.com", label: "Email" },
+    {
+      icon: FiGithub,
+      href: "https://github.com/PraveshSubba",
+      label: "GitHub",
+    },
+    {
+      icon: FiLinkedin,
+      href: "www.linkedin.com/in/praveshsubba",
+      label: "LinkedIn",
+    },
+    { icon: FiMail, href: "mailto:praveshsubba81@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -34,8 +42,8 @@ const Footer = () => {
               <span className="text-gradient">/&gt;</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              C S Graduate & AI ML passionate about transforming data 
-              into impactful solutions.
+              C S Graduate & AI ML passionate about transforming data into
+              impactful solutions.
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
@@ -72,28 +80,28 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Stay Updated</h4>
+            <h4 className="font-display font-semibold mb-4">Built With</h4>
             <p className="text-muted-foreground text-sm mb-4">
-              Subscribe for updates on my latest projects and articles.
+              Designed and developed with:
             </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-2.5 bg-secondary/50 border border-border/50 rounded-lg 
-                         text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-              />
-              <motion.button
-                className="px-4 py-2.5 bg-gradient-primary text-primary-foreground rounded-lg text-sm font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Subscribe
-              </motion.button>
+            <div className="flex flex-wrap gap-2">
+
+              <span className="px-2.5 py-1 rounded-md bg-secondary/50 border border-border/50 text-xs text-muted-foreground font-medium">
+                Next.js 14
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-secondary/50 border border-border/50 text-xs text-muted-foreground font-medium">
+                Tailwind CSS
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-secondary/50 border border-border/50 text-xs text-muted-foreground font-medium">
+                Framer Motion
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-secondary/50 border border-border/50 text-xs text-muted-foreground font-medium">
+                Typescript
+              </span>
             </div>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
@@ -101,7 +109,6 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {currentYear} Pravesh Subba. All rights reserved.
           </p>
-        
         </div>
       </div>
     </footer>

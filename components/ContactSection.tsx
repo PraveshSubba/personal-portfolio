@@ -1,47 +1,38 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { Mail, MapPin, Send, Calendar, ArrowUpRight } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
-  const sendMessage = async (data: {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-    if (!res.ok) {
-      throw new Error("Failed to send message");
-    }
-
-    return res.json();
-  };
-
-  const mutation = useMutation({
-    mutationFn: sendMessage,
-  });
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    mutation.mutate({
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      subject: formData.get("subject") as string,
-      message: formData.get("message") as string,
-    });
+    try {
+      await emailjs.sendForm(
+        "service_9lqe76x",   
+        "template_grvlfxa",  
+        form,
+        "ihZxG4tBlTUEBPAXH"     
+      );
 
-    e.currentTarget.reset();
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      console.error("EMAILJS ERROR:", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,8 +54,8 @@ const ContactSection = () => {
             <span className="text-gradient">Amazing Together</span>
           </h2>
           <p className="section-subheading mx-auto">
-            Whether you have a project in mind, a research collaboration, or
-            just want to connect — I'd love to hear from you!
+            Whether you have a project in mind, a research collaboration, or just
+            want to connect — I'd love to hear from you!
           </p>
         </AnimatedSection>
 
@@ -85,7 +76,7 @@ const ContactSection = () => {
                       Email
                     </p>
                     <a
-                      href="mailto:alex.chen@stanford.edu"
+                      href="mailto:praveshsubba81@gmail.com"
                       className="text-foreground hover:text-primary transition-colors font-medium"
                     >
                       praveshsubba81@gmail.com
@@ -118,7 +109,7 @@ const ContactSection = () => {
 
             <AnimatedSection delay={0.3}>
               <motion.a
-                href="https://calendly.com"
+                href="https://calendar.app.google/neb7iExRXbb73p959"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card-glass p-6 rounded-2xl card-hover flex items-center justify-between group"
@@ -146,91 +137,87 @@ const ContactSection = () => {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium mb-2"
-                    >
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Your Name
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl 
-                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
-                               transition-all placeholder:text-muted-foreground/50"
-                      placeholder="name"
+                      required
+                      className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl
+                                 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+                                 transition-all placeholder:text-muted-foreground/50"
+                      placeholder="Your name"
                     />
                   </div>
+
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium mb-2"
-                    >
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl 
-                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
-                               transition-all placeholder:text-muted-foreground/50"
-                      placeholder="email"
+                      required
+                      className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl
+                                 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+                                 transition-all placeholder:text-muted-foreground/50"
+                      placeholder="you@example.com"
                     />
                   </div>
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
                     Subject
                   </label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
-                    className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl 
-                             focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
-                             transition-all placeholder:text-muted-foreground/50"
+                    className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl
+                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+                               transition-all placeholder:text-muted-foreground/50"
                     placeholder="Project Collaboration"
                   />
                 </div>
+
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl 
-                             focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary 
-                             transition-all resize-none placeholder:text-muted-foreground/50"
+                    required
+                    className="w-full px-4 py-3 bg-secondary/50 border border-border/50 rounded-xl
+                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+                               transition-all resize-none placeholder:text-muted-foreground/50"
                     placeholder="Tell me about your project or idea..."
                   />
                 </div>
+
                 <motion.button
                   type="submit"
-                  disabled={mutation.isPending}
+                  disabled={loading}
                   className="btn-primary w-full justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Send className="w-4 h-4" />
-                  {mutation.isPending ? "Sending..." : "Send Message"}
+                  {loading ? "Sending..." : "Send Message"}
                 </motion.button>
-                {mutation.isSuccess && (
+
+                {status === "success" && (
                   <p className="text-green-500 text-sm text-center">
                     Message sent successfully!
                   </p>
                 )}
 
-                {mutation.isError && (
+                {status === "error" && (
                   <p className="text-red-500 text-sm text-center">
                     Failed to send message. Try again.
                   </p>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, FileText, Sparkles } from "lucide-react";
-import { FiGithub, FiLinkedin,FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -31,7 +31,7 @@ const HeroSection = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="absolute inset-0 noise-bg" />
-      
+
       {/* Gradient Orbs */}
       <motion.div
         className="absolute top-1/4 -left-64 w-125 h-125 bg-primary/20 rounded-full blur-[120px]"
@@ -92,7 +92,7 @@ const HeroSection = () => {
           variants={itemVariants}
           className="section-subheading mx-auto mb-12 text-lg md:text-xl"
         >
-          Transforming complex data into actionable insights. Specializing in 
+          Transforming complex data into actionable insights. Specializing in
           <span className="text-primary font-medium"> machine learning</span>,
           <span className="text-accent font-medium"> deep learning</span>, and
           <span className="text-primary font-medium"> statistical analysis</span>.
@@ -118,20 +118,13 @@ const HeroSection = () => {
           </motion.a>
           <motion.a
             href="/resume.pdf"
+            download="Pravesh_Subba_CV.pdf"
             className="btn-secondary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a 
-              href="/resume.pdf" 
-              download="Pravesh_Subba_CV.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Download CV</span>
-            </a>
+            <FileText className="w-4 h-4" />
+            <span>Download CV</span>
           </motion.a>
         </motion.div>
 

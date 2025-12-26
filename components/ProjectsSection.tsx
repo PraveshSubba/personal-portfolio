@@ -50,7 +50,7 @@ const projects = [
       "Redux Toolkit",
       "Cloudinary"
     ],
-    image: "/images/project4.webp", 
+    image: "/images/project3.webp", 
     githubLink: "https://github.com/PraveshSubba/onDemandDoc.git", 
     metrics: "3-Portal Architecture", 
   },

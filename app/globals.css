@@ -59,6 +59,8 @@
       hsl(270 80% 65%) 0%,
       hsl(330 80% 60%) 100%
     );
+
+    --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   }
 
   .light {
@@ -95,7 +97,6 @@
     --ring: 250 65% 55%;
   }
 }
-
 
   /* BASE STYLES */
 
@@ -139,6 +140,25 @@
   /* UTILITIES */
 
 @layer utilities {
+  .star {
+    @apply absolute rounded-full bg-white;
+    box-shadow: 0 0 10px 2px rgba(255,255,255,0.4); 
+  }
+
+  @keyframes pulse-subtle {
+      0%,
+      100% {
+        opacity:1;
+      }
+      50% {
+        opacity:0.8;
+      }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 4s ease-in-out infinite;
+  }
+
   .text-gradient {
     background-image: var(--gradient-primary);
     @apply bg-clip-text text-transparent;
