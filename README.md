@@ -1,128 +1,85 @@
-﻿# Personal Portfolio — Next.js + TypeScript
+<div align="center">
 
-Professional, accessible, and responsive personal portfolio built with Next.js (App Router), TypeScript and Tailwind CSS. This repository contains a modular component library and page sections that make it simple to personalize content, showcase projects, and deploy to any Next.js-compatible hosting platform.
+  <br />
+  <img src="./public/images/logo.png" alt="Pravesh Subba" width="100" height="100" style="border-radius: 20%; box-shadow: 0px 4px 10px rgba(0,0,0,0.15);">
 
-## Highlights
+  <h1 align="center">Pravesh Subba</h1>
 
-- Clean, responsive design with sections for Hero, About, Projects, Skills and Contact.
-- Reusable UI primitives in `components/ui/` and higher-level page sections in `components/`.
-- Theme toggle (light / dark) and accessible interaction patterns.
-- Built with modern Next.js conventions (App Router) and TypeScript.
+  <p align="center">
+    <strong>MSc Data Science Student • Machine Learning • Full Stack Developer</strong>
+  </p>
+  
+  <p align="center">
+    Welcome to the source code of my personal portfolio. <br />
+    This platform acts as a central hub for my data science projects, technical articles, and professional experience.
+    <br />
+    <br />
+    <a href="https://portfolio-one-fawn-77.vercel.app/"><strong>View Live Site »</strong></a>
+    <br />
+    <br />
+    <a href="https://www.linkedin.com/in/praveshsubba">Connect on LinkedIn</a>
+    ·
+    <a href="mailto:praveshsubba81@gmail.com">Email Me</a>
+  </p>
 
-## Live Demo
+  <p align="center">
+    <a href="https://nextjs.org">
+      <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+    </a>
+    <a href="https://www.typescriptlang.org/">
+      <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    </a>
+    <a href="https://tailwindcss.com/">
+      <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    </a>
+  </p>
+</div>
 
-Add your deployment URL here when available (e.g., Vercel):
+<br />
 
-> https://your-portfolio-url.example
+---
 
-## Quick Start
+## 👨‍💻 About The Project
 
-### Prerequisites
+As a **Data Science student**, I needed a platform that was more than just a static resume. I built this site to bridge the gap between my analytical backend skills (Python, ML) and modern frontend engineering.
 
-- Node.js 16+ (LTS recommended)
-- npm, pnpm or yarn
+The goal was to create a high-performance, accessible web experience that allows me to showcase interactive data visualizations and detailed case studies without relying on rigid CMS platforms.
 
-### Install dependencies
+---
 
-```bash
-npm install
-# or
-pnpm install
-# or
-yarn install
-```
+## 🛠 Tech Stack
 
-### Run (development)
+I chose this stack to ensure the site is fast, type-safe, and SEO-friendly.
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
-```
+| Category | Technologies |
+| :--- | :--- |
+| **Framework** | Next.js 14 (App Router), React 18 |
+| **Styling** | Tailwind CSS, Lucide Icons, Shadcn/UI |
+| **Language** | TypeScript |
+| **Data/Content** | JSON / MDX (for project case studies) |
+| **Deployment** | Vercel |
 
-### Build (production)
+---
 
-```bash
-npm run build
-npm run start
-```
+## ⚡️ Key Highlights
 
-## Project Structure (overview)
+* **Performance First:** Utilizing React Server Components to minimize client-side JavaScript, ensuring the site loads instantly even on slow networks.
+* **Responsive Architecture:** A mobile-first approach that adapts layout and typography for readable case studies on any device.
+* **Type Safety:** Strict TypeScript implementation to prevent runtime errors and ensure code quality.
+* **Accessibility:** Semantic HTML structure and ARIA labels to ensure the portfolio is navigable by all users.
 
-- `app/` — Next.js App Router entry, global layout and pages
-- `components/` — Page sections (`HeroSection`, `ProjectsSection`, etc.)
-- `components/ui/` — Design system primitives and shared UI components
-- `hooks/` — Custom React hooks (e.g., `use-mobile`, `use-toast`)
-- `lib/` — Utility helpers and small shared utilities
-- `public/` — Static assets (images, fonts)
+---
 
-## Key files
+## 📂 Project Structure
 
-- `app/page.tsx` — Home page composition
-- `app/layout.tsx` — Global layout and metadata
-- `components/ProjectsSection.tsx` — Projects listing and cards
-- `components/HeroSection.tsx` — Landing hero section
+This is how I organized the codebase for scalability:
 
-## Development Notes
-
-- Replace placeholder content in `app/page.tsx` and components to personalize copy and projects.
-- Add project images to `public/images/` and reference them from `components/ProjectsSection.tsx`.
-- This project uses Tailwind CSS. Adjust theme tokens in `tailwind.config.ts` as needed.
-
-## Deployment
-
-Recommended: Vercel (native Next.js support). Steps:
-
-1. Push your repository to GitHub/GitLab/Bitbucket.
-2. Create a new project in Vercel and link the repository.
-3. Use the default build command `npm run build` and output directory.
-
-Other hosts that support Next.js are also compatible (Netlify, Render, etc.).
-
-## Contributing
-
-Contributions are welcome — open an issue or submit a pull request with improvements. If you submit changes, please:
-
-- Keep changes focused and document any new configuration.
-- Run formatting (Prettier) and type checks before opening a PR.
-
-## Suggested scripts (package.json)
-
-```json
-{
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit"
-  }
-}
-```
-
-## Accessibility & Performance
-
-- Aim to keep semantic HTML, keyboard navigation and ARIA where appropriate.
-- Use Next.js built-in image optimization for performance (`next/image`).
-
-## License
-
-This repository is provided under the MIT License. Replace or update the license to reflect your preferences.
-
-## Contact
-
-Include your preferred contact method or social links here (email, LinkedIn, GitHub).
-
-## Acknowledgements
-
-- Built with Next.js, Tailwind CSS and small open-source UI primitives.
-
-## Next steps I can take for you
-
-- Add CI/CD and badge placeholders (build, license, code coverage)
-- Populate `components/ProjectsSection.tsx` with example project entries
-- Add a short deployment guide for Vercel with environment variable notes
-
-If you'd like any of the above, tell me which one to do next and I will proceed.
+```text
+.
+├── app/                   # App Router pages (Home, Projects, About)
+├── components/            # React Components
+│   ├── ui/                # Small atomic components (Buttons, Cards)
+│                          # Major page blocks (Hero, Skills Grid)
+├── lib/                   # Utility functions
+├── hooks/                 # Global styles and Tailwind config
+└── public/                # Static assets (Profile images, Project thumbnails)
