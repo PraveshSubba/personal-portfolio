@@ -14,7 +14,7 @@
     This platform acts as a central hub for my data science projects, technical articles, and professional experience.
     <br />
     <br />
-    <a href="https://portfolio-one-fawn-77.vercel.app/"><strong>View Live Site »</strong></a>
+    <a href="https://personal-portfolio-psi-eight-27.vercel.app/"><strong>View Live Site »</strong></a>
     <br />
     <br />
     <a href="https://www.linkedin.com/in/praveshsubba">Connect on LinkedIn</a>
